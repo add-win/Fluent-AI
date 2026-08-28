@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="fluentGrad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="50%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="sparkleGrad" x1="10" y1="8" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#93C5FD" />
+    </linearGradient>
+  </defs>
+  <!-- App Background Shape -->
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#fluentGrad)" />
+  <!-- Sparkle & Voice Icon Mark -->
+  <path d="M16 7L17.8 12.2C18.2 13.4 19.1 14.3 20.3 14.7L25.5 16.5L20.3 18.3C19.1 18.7 18.2 19.6 17.8 20.8L16 26L14.2 20.8C13.8 19.6 12.9 18.7 11.7 18.3L6.5 16.5L11.7 14.7C12.9 14.3 13.8 13.4 14.2 12.2L16 7Z" fill="url(#sparkleGrad)" />
+</svg>
