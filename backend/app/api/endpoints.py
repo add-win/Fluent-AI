@@ -80,6 +80,22 @@ def update_profile(
 def get_dashboard_summary(current_user: dict = Depends(get_current_user), db: Session = Depends(get_db)):
     profile_id = current_user["id"]
     profile = db.query(models.Profile).filter(models.Profile.id == profile_id).first()
+    if not profile:
+        profile = models.Profile(
+            id=profile_id,
+            username="Personal User",
+            speaking_score=70,
+            grammar_score=70,
+            vocabulary_score=70,
+            pronunciation_score=70,
+            confidence_score=70,
+            xp=100,
+            level=1,
+            daily_streak=1
+        )
+        db.add(profile)
+        db.commit()
+        db.refresh(profile)
     
     # Calculate average scores
     avg_scores = db.query(
