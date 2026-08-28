@@ -15,15 +15,12 @@ app = FastAPI(
 )
 
 # CORS configuration
-# Allowing localhost for local development and all hosts for production deployments
+# allow_origins=["*"] is required — FastAPI CORSMiddleware does NOT support
+# wildcard subdomain patterns like "https://*.vercel.app". Only bare "*" works.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "https://fluent-ai-swart.vercel.app",  # ← add your Vercel URL here
-        "https://*.vercel.app",          # ← allows all Vercel preview URLs
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,   # must be False when allow_origins=["*"]
     allow_methods=["*"],
     allow_headers=["*"],
 )
